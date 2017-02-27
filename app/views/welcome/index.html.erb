@@ -1,2 +1,10 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Welcome to the Restaurants App</h1>
+<p>More functionality coming soon!</p>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% if !user_signed_in? %>
+	<%= link_to "Sign up", new_user_registration_path %>
+	<%= link_to "Sign in", new_user_session_path %>
+<% else %>
+	<%= link_to("log out", destroy_user_session_path, :method => :delete)%>
+<% end %>
